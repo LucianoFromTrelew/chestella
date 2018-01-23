@@ -17,8 +17,8 @@ class TestArgs(CLITestCase):
         self.args = ["some_project", "extra_arg"]
 
     def test_accepts_only_one_arg(self):
-        process = self.parser.parse_args(self.args[:1])
-        self.assertEqual(True, True)
+        args = self.parser.parse_args(self.args[:1])
+        self.assertEqual(args.name, "some_project")
 
     def test_does_not_accept_more_than_one_arg(self):
         with self.assertRaises(SystemExit):
