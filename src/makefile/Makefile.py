@@ -1,0 +1,13 @@
+from .config import MAKEFILE_TEMPLATE
+
+class Makefile():
+
+    def __init__(self, name, path):
+        self.name = name
+        self.path = path
+
+    def write_makefile(self):
+        # print("PRINTING MAKEFILE...")
+        # print(MAKEFILE_TEMPLATE.format(path=self.path, name=self.name))
+        with open("{}/Makefile".format(self.path), 'w') as f:
+            f.write(MAKEFILE_TEMPLATE.format(path=self.path, name=self.name))
