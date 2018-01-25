@@ -1,4 +1,4 @@
-import os, errno, shutil
+import os
 
 class Directory():
     def __init__(self, path):
@@ -7,9 +7,8 @@ class Directory():
         try:
             os.makedirs(self.path)
         except OSError as e:
-            #directory already exist
-            if e.errno != errno.EEXIST:
-                raise
+            raise
 
-    def remove(self):
-        shutil.rmtree(self.path)
+    def write_file(self, path, content):
+        with open("{}/{}".format(self.path, path), 'w') as f:
+            f.write(content)
