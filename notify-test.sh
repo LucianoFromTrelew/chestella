@@ -1,6 +1,6 @@
 while true
 do
-    python test/test_*.py
+    python -m unittest discover -s test/
     if [ $? -ne 0 ]; 
     then
         paplay /usr/share/sounds/freedesktop/stereo/bell.oga 2> /dev/null
