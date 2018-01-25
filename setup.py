@@ -11,7 +11,7 @@ setup(
   author = 'Luciano Serruya Aloisi',
   author_email = 'lucianoserruya@hotmail.com',
   url = 'https://github.com/LucianoFromTrelew/chestella', # use the URL to the github repo
-  download_url = 'https://github.com/peterldowns/mypackage/archive/0.1.tar.gz',
+  download_url = 'https://github.com/LucianoFromTrelew/chestella/archive/0.1.tar.gz',
   keywords = ['project', 'C', 'c', 'creator', 'manager'], # arbitrary keywords
   classifiers = [],
 )
