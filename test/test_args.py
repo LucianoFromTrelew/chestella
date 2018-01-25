@@ -1,28 +1,58 @@
+"""Tests for the CLI"""
 import unittest
 import os
+import shutil
 import sys
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from src.main import create_parser
+from src.project.Project import Project
+
 
 class CLITestCase(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.parser = create_parser()
 
+
 class TestArgs(CLITestCase):
-    """Test for parsing args"""
+    """Testing the CLI"""
 
     def setUp(self):
-        self.args = ["some_project", "extra_arg"]
+        self.args = ["init", "some_project", "extra_arg"]
 
-    def test_accepts_only_one_arg(self):
-        args = self.parser.parse_args(self.args[:1])
+    def test_init_parses_correctly(self):
+        args = self.parser.parse_args(self.args[:2])
         self.assertEqual(args.name, "some_project")
 
-    def test_does_not_accept_more_than_one_arg(self):
+    def test_init_does_not_accept_more_than_one_arg(self):
         with self.assertRaises(SystemExit):
             self.parser.parse_args(self.args)
+
+    def test_init_does_not_accept_less_than_one_arg(self):
+        with self.assertRaises(SystemExit):
+            self.parser.parse_args()
+
+    def test_just_init_will_not_work(self):
+        with self.assertRaises(SystemExit):
+            self.parser.parse_args(self.args[:1])
+
+    def test_create_project(self):
+        args = self.parser.parse_args(self.args[:2])
+        p = Project(args.name)
+        self.assertIsNotNone(p)
+
+    def test_create_project_with_right_name(self):
+        args = self.parser.parse_args(self.args[:2])
+        p = Project(args.name)
+        self.assertEqual(p.name, "some_project")
+
+    def tearDown(self):
+        try:
+            shutil.rmtree("some_project")
+        except Exception as e:
+            pass
+
 
 if __name__ == "__main__":
     unittest.main()
