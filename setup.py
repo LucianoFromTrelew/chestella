@@ -1,7 +1,11 @@
-from distutils.core import setup
+from setuptools import setup
+
 setup(
   name = 'chestella',
   packages = ['chestella'], # this must be the same as the name above
+  entry_points = {
+    "console_scripts": ['chestella = chestella.chestella:main']
+  },
   version = '0.1',
   description = 'A C-Projects manager',
   author = 'Luciano Serruya Aloisi',
