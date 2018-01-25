@@ -5,8 +5,8 @@ import sys
 from subprocess import call
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from src.main import create_parser
-from src.project.Project import Project
+from chestella.chestella import create_parser
+from chestella.project.Project import Project
 from test_args import CLITestCase
 
 

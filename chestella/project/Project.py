@@ -3,8 +3,8 @@ from .config import C_SOURCE_TEMPLATE
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 
-from src.directory.Directory import Directory
-from src.makefile.Makefile import Makefile
+from chestella.directory.Directory import Directory
+from chestella.makefile.Makefile import Makefile
 
 class ProjectAlreadyExistsException(Exception):
     def __init__(self, *args, **kwargs):
