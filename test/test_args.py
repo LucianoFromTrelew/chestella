@@ -23,7 +23,7 @@ class TestArgs(CLITestCase):
 
     def test_init_parses_correctly(self):
         args = self.parser.parse_args(self.args[:2])
-        self.assertEqual(args.name, "some_project")
+        self.assertEqual(args.path, "some_project")
 
     def test_init_does_not_accept_more_than_one_arg(self):
         with self.assertRaises(SystemExit):
@@ -39,12 +39,13 @@ class TestArgs(CLITestCase):
 
     def test_create_project(self):
         args = self.parser.parse_args(self.args[:2])
-        p = Project(args.name)
+        p = Project(args.path)
         self.assertIsNotNone(p)
 
     def test_create_project_with_right_name(self):
         args = self.parser.parse_args(self.args[:2])
-        p = Project(args.name)
+        p = Project(args.path)
+        self.assertEqual(p.path, "some_project")
         self.assertEqual(p.name, "some_project")
 
     def tearDown(self):
