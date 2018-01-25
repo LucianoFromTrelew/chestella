@@ -1,6 +1,8 @@
+# -*- coding: utf-8 -*-
+
 import argparse
 import sys
-from project.Project import Project, ProjectAlreadyExistsException
+from .project.Project import Project, ProjectAlreadyExistsException
 
 
 def create_parser():
@@ -32,6 +34,5 @@ def main():
         print("Oops! Something went wrong \n[{}]".format(e))
 
 
-
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+    # main()
