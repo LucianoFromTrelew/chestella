@@ -2,11 +2,11 @@ from setuptools import setup
 
 setup(
   name = 'chestella',
-  packages = ['chestella'], # this must be the same as the name above
+  packages = ['chestella', 'chestella.directory', 'chestella.project', 'chestella.makefile'], # this must be the same as the name above
   entry_points = {
     "console_scripts": ['chestella = chestella.chestella:main']
   },
-  version = '0.1',
+  version = '0.3',
   description = 'A C-Projects manager',
   author = 'Luciano Serruya Aloisi',
   author_email = 'lucianoserruya@hotmail.com',
