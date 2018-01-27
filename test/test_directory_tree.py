@@ -13,6 +13,7 @@ from test_args import CLITestCase
 class TestDirectoryTree(CLITestCase):
 
     ROOT = "{}/test_project/".format(os.getcwd())
+    # ROOT = "test_project/"
 
     def setUp(self):
         self.args = self.parser.parse_args("init {}".format(self.ROOT).split())
@@ -45,4 +46,3 @@ class TestDirectoryTree(CLITestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
