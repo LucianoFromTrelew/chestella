@@ -8,5 +8,5 @@ do
         paplay /usr/share/sounds/freedesktop/stereo/complete.oga 2> /dev/null
     fi
     find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf
-    inotifywait -e modify $(find -name *.py)
+    inotifywait -e modify $(find . -name '*.py')
 done
