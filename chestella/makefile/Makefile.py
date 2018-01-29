@@ -9,4 +9,4 @@ class Makefile():
 
     def write_makefile(self):
         with open("{}/Makefile".format(self.path), 'w') as f:
-            f.write(MAKEFILE_TEMPLATE.format(path=self.path, name=self.name))
+            f.write(MAKEFILE_TEMPLATE.format(name=self.name))
