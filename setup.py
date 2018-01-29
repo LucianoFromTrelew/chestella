@@ -6,7 +6,7 @@ setup(
   entry_points = {
     "console_scripts": ['chestella = chestella.chestella:main']
   },
-  version = '0.4',
+  version = '0.4.1',
   description = 'A C-Projects manager',
   author = 'Luciano Serruya Aloisi',
   author_email = 'lucianoserruya@hotmail.com',
